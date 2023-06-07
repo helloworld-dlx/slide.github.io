@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset=UTF-8><title>helloworld - By xyzlh</title><link rel=stylesheet href=https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://cdn.staticfile.org/prism/1.15.0/themes/prism.min.css><link rel=stylesheet href=https://cdn.staticfile.org/KaTeX/0.10.0-rc.1/katex.min.css><link href=./css/chunk-vendors.4e4765ff.css rel=stylesheet></head><body><div><article id=webslides><section slide class="slide bg-black-blue aligncenter" image="https://source.unsplash.com/C1HhAQrbykQ/ .dark"><span class="background dark" style="background-image:url('https://source.unsplash.com/C1HhAQrbykQ/')"></span><div class=wrap wrap=true><h1 class="text-landing text-shadow">helloworld</h1><p class=text-intro>By xyzlh</p><p><a href=https://github.com/ksky521/nodeppt class="button ghost" target=_blank><i class="fa fa-github"></i> Github</a></p></div></section><section slide class=slide><div class=wrap wrap=true><h1>封面样式</h1><h2>h1是作为封面用的，内部的都用h2</h2></div></section><section slide class=slide style="background-image:url('/img/bg1.png')"><div class=wrap wrap=true><h1 :&amp;.flexbox.vleft="">背景图片</h1><h2>使用方法：[slide style=&quot;background-image::url('/img/bg1.png')&quot;]</h2></div></section><section slide class=slide><div class=wrap wrap=true><h2>主页面样式</h2><h3>----是上下分界线</h3><hr><p>nodeppt是基于nodejs写的支持 <strong>Markdown!</strong> 语法的网页PPT</p><p>nodeppt：https:://github.com/ksky521/nodePPT</p></div></section><section slide class=slide><div class=wrap wrap=true><p>什么？这些功能还不够用？</p><p>极客模式：查看源码的nodeppt.js，相信你会找到牛逼的手机互动（摇一摇换页）功能</p><p>查看项目目录ppts获取更多帮助信息</p></div></section></article></div><script src=https://cdn.staticfile.org/echarts/4.8.0/echarts.min.js></script><script>window.pluginsOptions = {}
+
+
+
+    window.webslidesOptions = {}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let isPrintMode = false;
+    if(~location.search.indexOf('print-pdf')){
+        isPrintMode = true;
+        WebSlides.registerPlugin('scroll', function(){});
+    }
+    const wsOptions = {
+        loop: false
+    };
+    if(window.webslidesOptions){
+        for (let i in webslidesOptions){
+            if(webslidesOptions.hasOwnProperty(i)){
+                wsOptions[i] = webslidesOptions[i];
+            }
+        }
+    }
+    const ws = new WebSlides(wsOptions)
+
+    window.wsInstance = ws;
+    if(isPrintMode){
+        ws.slides.forEach(s=>s.show())
+    }
+}, false)</script><script src=./js/chunk-vendors.js></script><script src=./js/slide.js></script></body></html>
